@@ -4,7 +4,7 @@
 #
 Name     : repoze.lru
 Version  : 0.6
-Release  : 12
+Release  : 13
 URL      : https://pypi.python.org/packages/source/r/repoze.lru/repoze.lru-0.6.tar.gz
 Source0  : https://pypi.python.org/packages/source/r/repoze.lru/repoze.lru-0.6.tar.gz
 Summary  : A tiny LRU cache implementation and decorator
