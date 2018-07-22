@@ -4,7 +4,7 @@
 #
 Name     : repoze.lru
 Version  : 0.7
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Summary  : A tiny LRU cache implementation and decorator
@@ -64,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532244317
+export SOURCE_DATE_EPOCH=1532273407
 python3 setup.py build -b py3
 
 %check
