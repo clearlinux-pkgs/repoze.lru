@@ -4,26 +4,19 @@
 #
 Name     : repoze.lru
 Version  : 0.7
-Release  : 24
+Release  : 25
 URL      : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Summary  : A tiny LRU cache implementation and decorator
 Group    : Development/Tools
 License  : ZPL-2.1
-Requires: repoze.lru-python3
-Requires: repoze.lru-license
-Requires: repoze.lru-python
-Requires: Sphinx
-Requires: coverage
-Requires: nose
+Requires: repoze.lru-license = %{version}-%{release}
+Requires: repoze.lru-python = %{version}-%{release}
+Requires: repoze.lru-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pbr
-BuildRequires : pip
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
-BuildRequires : python3-dev
-BuildRequires : setuptools
 BuildRequires : tox
 BuildRequires : virtualenv
 
@@ -41,7 +34,7 @@ license components for the repoze.lru package.
 %package python
 Summary: python components for the repoze.lru package.
 Group: Default
-Requires: repoze.lru-python3
+Requires: repoze.lru-python3 = %{version}-%{release}
 
 %description python
 python components for the repoze.lru package.
@@ -64,8 +57,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532273407
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1541278212
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -74,9 +67,9 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/repoze.lru
-cp LICENSE.txt %{buildroot}/usr/share/doc/repoze.lru/LICENSE.txt
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/repoze.lru
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/repoze.lru/LICENSE.txt
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -85,8 +78,8 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/repoze.lru/LICENSE.txt
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/repoze.lru/LICENSE.txt
 
 %files python
 %defattr(-,root,root,-)
