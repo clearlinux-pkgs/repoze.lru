@@ -4,7 +4,7 @@
 #
 Name     : repoze.lru
 Version  : 0.7
-Release  : 32
+Release  : 33
 URL      : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/12/bc/595a77c4b5e204847fdf19268314ef59c85193a9dc9f83630fc459c0fee5/repoze.lru-0.7.tar.gz
 Summary  : A tiny LRU cache implementation and decorator
@@ -44,6 +44,7 @@ python components for the repoze.lru package.
 Summary: python3 components for the repoze.lru package.
 Group: Default
 Requires: python3-core
+Provides: pypi(repoze.lru)
 
 %description python3
 python3 components for the repoze.lru package.
@@ -58,7 +59,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576014984
+export SOURCE_DATE_EPOCH=1583218956
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
